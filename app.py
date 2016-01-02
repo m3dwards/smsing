@@ -39,7 +39,7 @@ def message():
 @app.route('/voice')
 def voice():
     message = 'Hello. Hola.'
-    xml = '<?xml version="1.0" encoding="UTF-8"?><vxml version = "2.1" ><form><block><prompt>' + message + '</promt></block></form></vxml>'
+    xml = '<?xml version="1.0" encoding="UTF-8"?><vxml version = "2.1"><form><block><prompt>' + message + '</prompt></block></form></vxml>'
     return Response(xml, mimetype='text/xml')
 
 if __name__ == '__main__':
