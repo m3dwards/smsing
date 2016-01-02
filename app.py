@@ -1,9 +1,14 @@
 from flask import Flask
+import requests
+
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
     return 'Hello World!'
+
+def send_txt(message, to):
+    #https://rest.nexmo.com/sms/json?api_key=xxxxxxxx&api_secret=xxxxxxxx&to=xxxxxxxxxxxx&from=NexmoWorks&text=hello+from+Nexmo
 
 @app.route('/message')
 def message():
