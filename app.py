@@ -38,7 +38,7 @@ def message():
 
 @app.route('/voice')
 def voice():
-    message = 'Hello. Hola.'
+    message = 'The slopes in America are much better than Europe.'
     xml = '<?xml version="1.0" encoding="UTF-8"?><vxml version = "2.1"><form><block><prompt>' + message + '</prompt></block></form></vxml>'
     return Response(xml, mimetype='text/xml')
 
