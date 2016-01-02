@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, Response
 import requests
 import os
 
@@ -27,7 +27,7 @@ def message():
         number = request.args.get('msisdn')
     
         if (text.lower() == "max"):
-            send_txt("00000001 00011010", number)
+            send_txt("Correct! Your next clue is: 00000001 00011010", number)
         else:
             send_txt("You got it wrong. " + text + " did not receive the Ray Mears book. Try again Becki.", number)
 
@@ -38,7 +38,9 @@ def message():
 
 @app.route('/voice')
 def voice():
-    return 'Voice'
+    message = 'Hello. Hola.'
+    xml = '<?xml version="1.0" encoding="UTF-8"?><vxml version = "2.1" ><form><block><prompt>' + message + '</promt></block></form></vxml>'
+    return Response(xml, mimetype='text/xml')
 
 if __name__ == '__main__':
     app.run()
