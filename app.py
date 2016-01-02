@@ -13,16 +13,21 @@ def send_txt(message, to):
 
 @app.route('/message')
 def message():
-    #?msisdn=19150000001&to=12108054321
-    #&messageId=000000FFFB0356D1&text=This+is+an+inbound+message
-    #&type=text&message-timestamp=2012-08-19+20%3A38%3A23
-    text = request.args.get('text')
-    number = request.args.get('msisdn')
     
-    if (text.lower() == "max"):
-        return "Congratulations"
+    try:
+        #?msisdn=19150000001&to=12108054321
+        #&messageId=000000FFFB0356D1&text=This+is+an+inbound+message
+        #&type=text&message-timestamp=2012-08-19+20%3A38%3A23
+        text = request.args.get('text')
+        number = request.args.get('msisdn')
     
-    return text + number
+        if (text.lower() == "max"):
+            x = 1
+
+    except:
+        pass
+
+    return "hello world"
 
 @app.route('/voice')
 def voice():
