@@ -8,6 +8,7 @@ def hello_world():
     return 'Hello World!'
 
 def send_txt(message, to):
+    pass
     #https://rest.nexmo.com/sms/json?api_key=xxxxxxxx&api_secret=xxxxxxxx&to=xxxxxxxxxxxx&from=NexmoWorks&text=hello+from+Nexmo
 
 @app.route('/message')
