@@ -4,9 +4,9 @@ import os
 
 app = Flask(__name__)
 
-apikey = os.environ('apikey')
-apisecret = os.environ('apisecret')
-phone = os.environ('phone')
+apikey = os.environ.get('apikey')
+apisecret = os.environ.get('apisecret')
+phone = os.environ.get('phone')
 
 @app.route('/')
 def hello_world():
